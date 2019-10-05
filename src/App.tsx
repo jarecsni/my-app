@@ -7,7 +7,7 @@ const App: React.FC = () => {
     <div className={styles.App}>
       <header className={styles.AppHeader}>
         <img src={logo} className={styles.AppLogo} alt="logo" />
-        <p>
+        <p data-testid="welcome-text">
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <a
