@@ -1,0 +1,7 @@
+1. Add react router
+2. Add bootstrap
+3. Add mobx-keystone
+4. Try streaming
+5. try endpoint calls as side effects
+6. Story boards
+7. Styled Components
