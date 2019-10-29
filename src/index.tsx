@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'mobx-react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import './index.scss';
 import App from './App';
+import { UiState } from './stores/UiState';
 import * as serviceWorker from './serviceWorker';
+import './index.scss';
+
+const stores = {
+  uiState: new UiState()
+};
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <Provider {...stores}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
 
