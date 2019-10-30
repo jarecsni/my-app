@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import { MemoryRouter as Router, Route } from 'react-router-dom';
+import { App } from './App';
+import { Home } from './Home';
 
-import App, { Home } from './App';
-
-import { componentWithId } from './testing/util/select';
+import { componentWithId } from '../testing/util/select';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
