@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'mobx-react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import App from './App';
+import { App } from './components/App';
 import { UiState } from './stores/UiState';
 import * as serviceWorker from './serviceWorker';
 import './index.scss';
