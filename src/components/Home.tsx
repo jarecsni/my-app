@@ -1,13 +1,13 @@
 import React from 'react';
+import { inject, observer } from 'mobx-react';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-
 import logo from './logo.svg';
 import styles from './Home.module.scss';
 
-class Home extends React.Component {
+class HomeComponent extends React.Component {
   render() {
     return (
       <Container>
@@ -34,4 +34,9 @@ class Home extends React.Component {
     );
   }
 }
-export { Home };
+
+@inject('uiState')
+@observer
+class Home extends HomeComponent {}
+
+export { Home, HomeComponent };
