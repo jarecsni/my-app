@@ -4,10 +4,11 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { UiState } from '../stores/UiState';
 import logo from './logo.svg';
 import styles from './Home.module.scss';
 
-class HomeComponent extends React.Component {
+class HomeComponent extends React.Component<{ uiState: UiState }> {
   render() {
     return (
       <Container>
@@ -27,7 +28,9 @@ class HomeComponent extends React.Component {
         <Row className="row">
           <Col xs={10}>
             <h1>My New React Bootstrap SPA</h1>
-            <Button data-testid="button-look">Look, I'm a button!</Button>
+            <Button data-testid="button-look">
+              Look, I'm a button!{this.props.uiState.userName}
+            </Button>
           </Col>
         </Row>
       </Container>
@@ -37,6 +40,12 @@ class HomeComponent extends React.Component {
 
 @inject('uiState')
 @observer
-class Home extends HomeComponent {}
+class Home extends HomeComponent {
+  componentDidMount() {
+    setTimeout(() => {
+      this.props.uiState.setUserName('Janos');
+    }, 2000);
+  }
+}
 
 export { Home, HomeComponent };
