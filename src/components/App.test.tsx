@@ -27,9 +27,8 @@ describe('App', () => {
   });
 
   it('renders a button', () => {
-    const home = shallow(<HomeComponent />, {
-      context: { uiState: mockUiState }
-    });
+    console.log(mockUiState);
+    const home = shallow(<HomeComponent {...stores} />);
     expect(componentWithId(home, 'button-look')).not.toBeNull();
     expect(componentWithId(home, 'button-look')).toHaveLength(1); // this returns 2 for some reason when inside a router
     expect(componentWithId(home, 'button-look').text()).toEqual(
