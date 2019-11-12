@@ -9,7 +9,7 @@ import { HomeComponent } from './Home';
 import { componentWithId } from '../testing/util/select';
 
 describe('App', () => {
-  const mockUiState = {};
+  const mockUiState = { userName: 'Janoska' };
   let stores = {
     uiState: mockUiState
   };
@@ -31,7 +31,7 @@ describe('App', () => {
     expect(componentWithId(home, 'button-look')).not.toBeNull();
     expect(componentWithId(home, 'button-look')).toHaveLength(1); // this returns 2 for some reason when inside a router
     expect(componentWithId(home, 'button-look').text()).toEqual(
-      "Look, I'm a button!"
+      "Look, I'm a button! Janoska"
     );
   });
 });

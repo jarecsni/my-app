@@ -30,7 +30,7 @@ class HomeComponent extends React.Component<{ uiState: UiState }> {
           <Col xs={10}>
             <h1>My New React Bootstrap SPA</h1>
             <Button data-testid="button-look">
-              Look, I'm a button!{uiState.userName}
+              Look, I'm a button! {uiState.userName}
             </Button>
           </Col>
         </Row>
