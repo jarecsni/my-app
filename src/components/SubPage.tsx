@@ -1,8 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { inject, observer } from 'mobx-react';
+import { UiState } from '../stores/UiState';
 
-class SubPage extends Component {
+class SubPageComponent extends React.Component<{ uiState: UiState }> {
   render() {
-    return <div>This is an example subpage</div>;
+    return <div>Time is: {new Date(this.props.uiState.time).toString()}</div>;
   }
 }
-export { SubPage };
+
+@inject('uiState')
+@observer
+class SubPage extends SubPageComponent {}
+
+export { SubPageComponent, SubPage };
