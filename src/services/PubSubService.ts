@@ -12,9 +12,7 @@ export abstract class PubSubService {
     this.topic = topicName;
   }
   subscribe(receiver: PubSubReceiver) {
-    const token = PubSub.subscribe(this.topic, (topic: string, data: any) => {
-      receiver(topic, data);
-    });
+    const token = PubSub.subscribe(this.topic, receiver);
     this.receivers.set(receiver, token);
   }
   unsubscribe(receiver: PubSubReceiver) {
