@@ -10,6 +10,7 @@ import styles from './Home.module.scss';
 
 class HomeComponent extends React.Component<{ uiState: UiState }> {
   render() {
+    const { uiState } = this.props;
     return (
       <Container>
         <img src={logo} className={styles.AppLogo} alt="logo" />
@@ -29,7 +30,7 @@ class HomeComponent extends React.Component<{ uiState: UiState }> {
           <Col xs={10}>
             <h1>My New React Bootstrap SPA</h1>
             <Button data-testid="button-look">
-              Look, I'm a button!{this.props.uiState.userName}
+              Look, I'm a button!{uiState.userName}
             </Button>
           </Col>
         </Row>

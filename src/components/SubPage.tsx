@@ -4,7 +4,8 @@ import { UiState } from '../stores/UiState';
 
 class SubPageComponent extends React.Component<{ uiState: UiState }> {
   render() {
-    return <div>Time is: {new Date(this.props.uiState.time).toString()}</div>;
+    const { uiState } = this.props;
+    return <div>Time is: {new Date(uiState.time).toString()}</div>;
   }
 }
 
