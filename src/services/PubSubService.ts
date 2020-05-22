@@ -11,17 +11,17 @@ export abstract class PubSubService {
   constructor(topicName: string) {
     this.topic = topicName;
   }
-  subscribe(receiver: PubSubReceiver) {
+  subscribe(receiver: PubSubReceiver): void {
     const token = PubSub.subscribe(this.topic, receiver);
     this.receivers.set(receiver, token);
   }
-  unsubscribe(receiver: PubSubReceiver) {
+  unsubscribe(receiver: PubSubReceiver): void {
     const token = this.receivers.get(receiver);
     if (token) {
       PubSub.unsubscribe(token);
     }
   }
-  publish(data: any, subTopic?: string) {
+  publish(data: any, subTopic?: string): void {
     const topic = subTopic ? this.topic + '.' + subTopic : this.topic;
     PubSub.publish(topic, data);
   }

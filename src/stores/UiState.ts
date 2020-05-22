@@ -4,7 +4,7 @@ import { timeService } from '../services/TimeService';
 export class UiState {
   _anObservableProp = false;
   @observable _userName?: string;
-  @observable _time: number = 0;
+  @observable _time = 0;
   @observable someFlag = false;
 
   constructor() {
