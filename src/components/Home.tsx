@@ -22,7 +22,7 @@ class HomeComponent extends React.Component<{ uiState: UiState }> {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Learn React
+              Learn React! Or Svelte
             </a>
           </Col>
         </Row>
