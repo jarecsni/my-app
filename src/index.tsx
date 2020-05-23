@@ -8,16 +8,16 @@ import * as serviceWorker from './serviceWorker';
 import './index.scss';
 
 const stores = {
-  uiState: new UiState(),
+    uiState: new UiState(),
 };
 
 ReactDOM.render(
-  <Provider {...stores}>
-    <Router>
-      <App />
-    </Router>
-  </Provider>,
-  document.getElementById('root')
+    <Provider {...stores}>
+        <Router>
+            <App />
+        </Router>
+    </Provider>,
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
