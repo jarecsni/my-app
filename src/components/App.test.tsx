@@ -11,8 +11,9 @@ import { componentWithId } from '../testing/util/select';
 describe('App', () => {
   const mockUiState = { userName: 'Janoska' };
   let stores = {
-    uiState: mockUiState
+    uiState: mockUiState,
   };
+
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
@@ -29,7 +30,8 @@ describe('App', () => {
   it('renders a button', () => {
     const home = shallow(<HomeComponent {...stores} />);
     expect(componentWithId(home, 'button-look')).not.toBeNull();
-    expect(componentWithId(home, 'button-look')).toHaveLength(1); // this returns 2 for some reason when inside a router
+    // this returns 2 for some reason when inside a router
+    expect(componentWithId(home, 'button-look')).toHaveLength(1);
     expect(componentWithId(home, 'button-look').text()).toEqual(
       "Look, I'm a button! Janoska"
     );

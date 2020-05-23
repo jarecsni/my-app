@@ -8,7 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import './index.scss';
 
 const stores = {
-  uiState: new UiState()
+  uiState: new UiState(),
 };
 
 ReactDOM.render(
