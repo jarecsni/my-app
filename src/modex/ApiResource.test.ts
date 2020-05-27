@@ -46,5 +46,21 @@ describe('apiResource', () => {
                 expect(res.state).toBe(State.Error);
             });
         });
+        describe('when the response is OK', () => {
+            beforeEach(() => {
+                const nock = require('nock');
+                const scope = nock('http://localhost')
+                    .get('/someurl')
+                    .reply(200, {
+                        message: 'Hello world',
+                    });
+            });
+            it('The state is according to the life cycle', async () => {
+                const res = new ApiResource('/someurl');
+                expect(res.state).toBe(State.Stale);
+                await res.sync();
+                expect(res.state).toBe(State.Synced);
+            });
+        });
     });
 });

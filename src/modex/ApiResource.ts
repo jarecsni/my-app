@@ -10,10 +10,9 @@ export enum State {
 export class ApiResource {
     _url: string;
     _data: any;
-    _state: State;
+    _state = State.Stale;
     constructor(url: string) {
         this._url = url;
-        this._state = State.Stale;
     }
     get url() {
         return this._url;
@@ -28,7 +27,6 @@ export class ApiResource {
             this._state = State.Synced;
             this._data = response.data;
         } catch (error) {
-            console.log(error);
             this._state = State.Error;
         }
     }
